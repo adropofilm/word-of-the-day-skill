@@ -1,0 +1,7 @@
+{
+  "utterance": "word of the day",
+  "intent_type": "WordOfTheDayIntent",
+  "intent": {
+    "WordOfTheDayKeyword": "word of the day"
+  }
+}
