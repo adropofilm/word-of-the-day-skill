@@ -15,8 +15,9 @@
 # You should have received a copy of the GNU General Public License
 # along with Mycroft Core.  If not, see <http://www.gnu.org/licenses/>.
 
-from adapt.intent import IntentBuilder
+from os.path import dirname 
 
+from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 from mycroft.util.log import getLogger
 
@@ -33,6 +34,8 @@ class WordOfTheDaySkill(MycroftSkill):
         super(WordOfTheDaySkill, self).__init__(name="WordOfTheDaySkill")
 
     def initialize(self):
+	self.load_data_files(dirname(__file__))
+
         word_of_the_day_intent = IntentBuilder("WordOfTheDayIntent"). \
             require("WordOfTheDayKeyword").build()
         self.register_intent(word_of_the_day_intent, self.handle_word_of_the_day_intent)
