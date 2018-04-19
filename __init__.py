@@ -26,16 +26,24 @@ from bs4 import BeautifulSoup
 
 __author__ = 'fmohamed'
 
+# Logger: used for debug lines, like "LOGGER.debug(xyz)". These
+# statements will show up in the command line when running Mycroft.
+
 LOGGER = getLogger(__name__)
 
+# The logic of each skill is contained within its own class, which inherits
+# base methods from the MycroftSkill class with the syntax you can see below:
+# "class ____Skill(MycroftSkill)"
 
 class WordOfTheDaySkill(MycroftSkill):
+
+     # The constructor of the skill, which calls MycroftSkill's constructor
     def __init__(self):
         super(WordOfTheDaySkill, self).__init__(name="WordOfTheDaySkill")
 
+    # This method loads the files needed for the skill's functioning, and
+    # creates and registers each intent that the skill uses
     def initialize(self):
-	self.load_data_files(dirname(__file__))
-
         word_of_the_day_intent = IntentBuilder("WordOfTheDayIntent"). \
             require("WordOfTheDayKeyword").build()
         self.register_intent(word_of_the_day_intent, self.handle_word_of_the_day_intent)
@@ -45,6 +53,12 @@ class WordOfTheDaySkill(MycroftSkill):
             text = text.replace(i,j)
         return text
 
+    # The "handle_xxxx_intent" functions define Mycroft's behavior when
+    # each of the skill's intents is triggered: in this case, he simply
+    # speaks a response. Note that the "speak_dialog" method doesn't
+    # actually speak the text it's passed--instead, that text is the filename
+    # of a file in the dialog folder, and Mycroft speaks its contents when
+    # the method is called.
     def handle_word_of_the_day_intent(self, message):
         self.speak_dialog("word.of.day")
 
@@ -67,13 +81,16 @@ class WordOfTheDaySkill(MycroftSkill):
 
 	self.speak("The word of the day is {}. The definition is as follows. {}".format(word_of_day, def_str)
 
-        # print "Word of the day: ", word_of_day
-        # print "Definition: ", def_str
 
+    # The "stop" method defines what Mycroft does when told to stop during
+    # the skill's execution. In this case, since the skill's functionality
+    # is extremely simple, the method just contains the keyword "pass", which
+    # does nothing.
     def stop(self):
         pass
 
-
+# The "create_skill()" method is used to create an instance of the skill.
+# Note that it's outside the class itself.
 def create_skill():
     return WordOfTheDaySkill()
 
