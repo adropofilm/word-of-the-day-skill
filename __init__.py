@@ -79,7 +79,7 @@ class WordOfTheDaySkill(MycroftSkill):
         replace_dict = { '<span>': '', '<em>': '', '</em>': '', '</span>': ''}
         def_str = replace_all(def_str, replace_dict)
 
-	self.speak("The word of the day is {}. The definition is as follows. {}".format(word_of_day, def_str)
+	self.speak("The word of the day is {}. The definition is as follows. {}".format(word_of_day, def_str))
 
 
     # The "stop" method defines what Mycroft does when told to stop during
