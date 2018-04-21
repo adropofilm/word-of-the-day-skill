@@ -11,5 +11,5 @@ This skill dynamically provides Mycroft users with the "word of the day" and def
 * "word of day"
 
 ## Credits 
-Mycroft AI
-Fatima Mohamed
+* Fatima Mohamed
+* Mycroft AI
