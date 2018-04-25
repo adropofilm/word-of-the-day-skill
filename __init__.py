@@ -31,6 +31,11 @@ __author__ = 'fmohamed'
 
 LOGGER = getLogger(__name__)
 
+def replace_all(text, dictionary):
+    for i, j in dictionary.iteritems():
+        text = text.replace(i,j)
+    return text
+
 # The logic of each skill is contained within its own class, which inherits
 # base methods from the MycroftSkill class with the syntax you can see below:
 # "class ____Skill(MycroftSkill)"
@@ -47,11 +52,6 @@ class WordOfTheDaySkill(MycroftSkill):
         word_of_the_day_intent = IntentBuilder("WordOfTheDayIntent"). \
             require("WordOfTheDayKeyword").build()
         self.register_intent(word_of_the_day_intent, self.handle_word_of_the_day_intent)
-
-    def replace_all(text, dictionary):
-        for i, j in dictionary.iteritems():
-            text = text.replace(i,j)
-        return text
 
     # The "handle_xxxx_intent" functions define Mycroft's behavior when
     # each of the skill's intents is triggered: in this case, he simply
@@ -79,7 +79,7 @@ class WordOfTheDaySkill(MycroftSkill):
         replace_dict = { '<span>': '', '<em>': '', '</em>': '', '</span>': ''}
         def_str = replace_all(def_str, replace_dict)
 
-	self.speak("The word of the day is {}. The definition is as follows. {}".format(word_of_day, def_str))
+	self.speak("The word of the day is {}. {}".format(word_of_day, def_str))
 
 
     # The "stop" method defines what Mycroft does when told to stop during
