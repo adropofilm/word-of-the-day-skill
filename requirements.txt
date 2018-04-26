@@ -1,2 +1,2 @@
-urllib==2.7.9
-bs4==4.4.0
+urllib
+bs4
