@@ -12,4 +12,5 @@ This skill dynamically provides Mycroft users with the "word of the day" and def
 
 ## Credits 
 * Fatima Mohamed
+* Dictionary.com 
 * Mycroft AI
