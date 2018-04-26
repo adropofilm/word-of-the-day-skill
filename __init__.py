@@ -31,6 +31,7 @@ __author__ = 'fmohamed'
 
 LOGGER = getLogger(__name__)
 
+# "replaces" values in given string using dictionary key/value pairs.
 def replace_all(text, dictionary):
     for i, j in dictionary.iteritems():
         text = text.replace(i,j)
