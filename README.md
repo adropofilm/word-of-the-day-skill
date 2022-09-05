@@ -3,7 +3,7 @@
 A case study on the Mycroft AI powered word of the day skill I wrote in 2018.
 
 ### Description 
-Welcome to my case study of the Word of the Day Skill! This skill was intended to leverage [Mycroft](https://github.com/MycroftAI/mycroft-core), the hackable open source voice assistant to provide you the "word of the day" and its definition. Current words and definitions come from 
+Welcome to my case study of the Word of the Day Skill I implemented in college! This skill was intended to leverage [Mycroft](https://github.com/MycroftAI/mycroft-core), the hackable open source voice assistant to provide you the "word of the day" and its definition. Current words and definitions come from 
 [Dictionary.com.](Dictionary.com)
 
 ### Table of Contents
