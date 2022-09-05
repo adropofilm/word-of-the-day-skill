@@ -14,11 +14,11 @@ Welcome to my case study of the Word of the Day Skill! This skill was intended t
 ###  What I would change today
 Ok folks, it's 2022! It's been about 4 years since I've worked on this project. I don't intend on refactoring, primarily to use this as a learning opportunity, but here are some notes on what I would change today:
 1. **Use an http client**:
-    - **Why did I not use one?** Hard to believe, but in 2018, there was no readily available word of the day APIs that I could use (or afford on a college student's budget, or lack thereof) Instead I opted to use [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to scrape the data I needed from the html. 
+    - **Why did I not use one?** Hard to believe, but in 2018, there was no readily available word of the day APIs that I could use (or afford on a college student's budget) Instead I opted to use [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to scrape the data I needed from the html. 
     - **How does this pose potential issues?** Relying on scraping HTML can cause broken functionality, especially since the UI is expected to change (and I'm sure it has). It's not as reliable as working with an API where you know you will get the exact data you need in the format you need it.
     - **Which client would I use now?** Most likely [requests](https://requests.readthedocs.io/en/latest/) or  [urllib3](https://urllib3.readthedocs.io/en/stable/) since both have all the functionality I'd need to make a basic GET request in addition to human-friendly documentation. :) 
 2. **Write More Tests**:
-   - **Why?** To make sure that the skill works, duh! The software test engineer in me today is shaking at the fact that I only wrote 1 test for this 4 years ago. Especially since there are at least 3 other *meaningful* tests I could have written for it.
+   - **Why?** To make sure that the skill works, duh! The software test engineer in me today is shaking at the fact that I only wrote 1 test for this 4 years ago. Especially since there are at least 3 other *meaningful* tests I could have written for it. Alas, we live and we learn and give ourselves grace. 
 3. **Write code that's more readable**:
     - I'd take a gander to say that you are probably a fan of code that is easy to read. I mean, who isn't?! There are several ways to employ this, but in this case, I would have changed the code below to be self-documenting, by extracting methods with names that tell exactly what they're doing:
     ``` python 
